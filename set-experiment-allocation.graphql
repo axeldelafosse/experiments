@@ -1,0 +1,19 @@
+mutation SetExperimentAllocation(
+  $customerId: Int!
+  $experimentId: String!
+  $variantId: String!
+) {
+  insert_experiments_allocations(
+    objects: [
+      {
+        customer_id: $customerId
+        experiment_id: $experimentId
+        variant_id: $variantId
+      }
+    ]
+  ) {
+    returning {
+      id
+    }
+  }
+}

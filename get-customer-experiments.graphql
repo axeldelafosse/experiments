@@ -1,0 +1,7 @@
+query GetCustomerExperiments($customerId: Int!) {
+  experiments_allocations(where: { customer_id: { _eq: $customerId } }) {
+    id
+    experiment_id
+    variant_id
+  }
+}
